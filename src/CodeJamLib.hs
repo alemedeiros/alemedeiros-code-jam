@@ -6,6 +6,7 @@ module CodeJamLib
         countSheep,
         countFlips,
         findGoldTiles,
+        lastWord,
     ) where
 
 -- | Counting Sheep
@@ -52,3 +53,15 @@ findGoldTiles k c s
     | s * c < k = []
     | s == k = [1..k]  -- Small input solution
     | otherwise = undefined
+
+-- | The Last Word
+--
+-- 2016 Round1A: Problem A
+lastWord :: String -> String
+lastWord s = lastWordAux s []
+    where
+        lastWordAux    [] lw = lw
+        lastWordAux (h:t) [] = lastWordAux t [h]
+        lastWordAux (h:t) lw@(lh:_)
+            | h < lh = lastWordAux t (lw ++ [h])
+            | otherwise = lastWordAux t (h:lw)
