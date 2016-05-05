@@ -51,8 +51,15 @@ countFlips st@(f:_) = countFlipsAux f st
 findGoldTiles :: Int -> Int -> Int -> [Int]
 findGoldTiles k c s
     | s * c < k = []
-    | s == k = [1..k]  -- Small input solution
-    | otherwise = undefined
+    | otherwise = map (+1) $ findTilesLarge tiles
+    where
+        tiles = [0..(k-1)] ++ replicate (mod k c) (k-1)
+        findTilesLarge [] = []
+        findTilesLarge ts = (getIndex 0 (take c ts)) : (findTilesLarge (drop c ts))
+            where
+                getIndex :: Int -> [Int] -> Int
+                getIndex _ [] = 0
+                getIndex p (h:t) = h + k * getIndex (p+1) t
 
 -- | The Last Word
 --
