@@ -15,6 +15,10 @@ Eventually I might add some discussion on the solutions, if I have time.
         +   [X] Problem B
         +   [ ] Problem C
         +   [X] Problem D  -- Only for small input cases
+    *  Round 1A (R1A)
+        +   [X] Problem A
+        +   [ ] Problem B
+        +   [ ] Problem C
 
 ## Running
 
