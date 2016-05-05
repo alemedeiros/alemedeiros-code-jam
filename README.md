@@ -1,4 +1,4 @@
-# alemedeiros-code-jam
+# alemedeiros-code-jam [![Build Status](https://travis-ci.org/alemedeiros/alemedeiros-code-jam.svg?branch=master)](https://travis-ci.org/alemedeiros/alemedeiros-code-jam)
 
 This is my Haskell Solution to some past [Google Code Jam][1] problems.
 
